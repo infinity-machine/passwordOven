@@ -33,11 +33,6 @@ function generatePassword() {
         var characterToAdd = passwordRaw[Math.floor(Math.random () * passwordRaw.length)]
         passwordResult = passwordResult + characterToAdd
         }
-        console.log(characterAmountNumber.value)
-        console.log(passwordRaw)
-        console.log(passwordRaw[Math.floor(Math.random () * passwordRaw.length)])
-        console.log(characterToAdd)
-        console.log(passwordResult)
     return passwordResult;
 }
 
