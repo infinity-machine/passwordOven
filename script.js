@@ -28,64 +28,25 @@ function generatePassword() {
     if (includeNumbers.checked && includeSymbols.checked) passwordRaw = letters.concat(numbers, symbols);
     if (includeUppercase.checked && includeNumbers.checked && includeSymbols.checked)
         passwordRaw = letters.concat(lettersUppercase, numbers, symbols);
-       
+        var passwordResult= ''     
     for (index = 0; index < characterAmountNumber.value; index++) {
-        var passwordCooked = passwordRaw + (Math.floor(Math.random () * passwordRaw.length)) 
-        passwordResult = passwordCooked
+        var characterToAdd = passwordRaw[Math.floor(Math.random () * passwordRaw.length)]
+        passwordResult = passwordResult + characterToAdd
         }
-
-
-        console.log(passwordRaw)
         console.log(characterAmountNumber.value)
-        console.log(passwordCooked)
-        
-    
+        console.log(passwordRaw)
+        console.log(passwordRaw[Math.floor(Math.random () * passwordRaw.length)])
+        console.log(characterToAdd)
+        console.log(passwordResult)
     return passwordResult;
-   
-    }
-    
-    
-    
-    
+}
 
-
-
-
-
-
-
-
-
-
-
-    
-    
-
-    // passwordResult = letters[Math.floor(Math.random())* characterAmountNumber.value] 
-    // console.log(passwordResult)
-    // return passwordResult
-
-    
-  
-    
- 
-  
-
-   
-
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
 
-
-// console.log(characterAmountNumber.value)
-//     console.log(includeUppercase.checked)
-//     console.log(includeNumbers.checked)
-//     console.log(includeSymbols.checked)
