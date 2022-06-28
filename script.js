@@ -18,9 +18,6 @@ function syncRange(event) {
     characterAmountNumber.value = value;
     characterAmountRange.value = value;
 }
-
-
-
 function generatePassword() {
     var passwordRaw = letters
     if (includeUppercase.checked) passwordRaw = letters.concat(lettersUppercase);
@@ -31,20 +28,22 @@ function generatePassword() {
     if (includeNumbers.checked && includeSymbols.checked) passwordRaw = letters.concat(numbers, symbols);
     if (includeUppercase.checked && includeNumbers.checked && includeSymbols.checked)
         passwordRaw = letters.concat(lettersUppercase, numbers, symbols);
+       
     for (index = 0; index < characterAmountNumber.value; index++) {
-        passwordResult = passwordRaw [(Math.floor(Math.random() * passwordRaw.length))]
+        var passwordCooked = passwordRaw + (Math.floor(Math.random () * passwordRaw.length)) 
+        passwordResult = passwordCooked
+        }
+
+
+        console.log(passwordRaw)
+        console.log(characterAmountNumber.value)
+        console.log(passwordCooked)
         
-    }
-    console.log(passwordRaw)
+    
     return passwordResult;
    
     }
     
-
-
-    
-   
-
     
     
     
