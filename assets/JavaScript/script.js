@@ -18,7 +18,7 @@ var generateBtn = document.querySelector("#generate");
 // EVENT LISTENERS
 characterAmountNumber.addEventListener('input', syncRange);
 characterAmountRange.addEventListener('input', syncRange);
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", servePassword);
 
 // SYNC RANGE AND NUMBER INPUTS
 function syncRange(event) {
@@ -28,7 +28,7 @@ function syncRange(event) {
 }
 
 // COOK PASSWORD
-function generatePassword() {
+function cookPassword() {
     var passwordRaw = []
     var passwordCooked= '';  
     if (includeLowercase.checked) passwordRaw = passwordRaw.concat(lettersLowercase);
@@ -45,8 +45,8 @@ function generatePassword() {
 }
 
 // SERVE COOKED PASSWORD
-function writePassword() {
-  var password = generatePassword();
+function servePassword() {
+  var password = cookPassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
